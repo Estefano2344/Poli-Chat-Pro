@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Poli Chat Pro</title>
+
+  <!-- Íconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOGIN (se muestra inicialmente) -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>Poli Chat Pro</h1>
+        <p class="muted">Ingresa tu nombre para conectarte</p>
+      </div>
+      <div class="login-body">
+        <div class="input-group">
+          <span class="input-icon"><i class="bi bi-person-fill"></i></span>
+          <input id="usernameInput" type="text" maxlength="20" placeholder="Tu nombre de usuario" />
+        </div>
+        <button id="joinBtn" class="btn primary">Unirse</button>
+      </div>
+      <div class="login-footer muted">Tus mensajes están cifrados de extremo a extremo</div>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="app" class="app" style="display:none;">
+    <!-- LEFT PANEL: contactos / usuarios conectados -->
+    <aside class="left-panel">
+      <header class="left-header">
+        <div class="title">
+          <img src="" alt="" class="logo" aria-hidden="true" />
+          <div>
+            <div class="app-name">Poli Chat Pro</div>
+            <div id="myStatus" class="muted small">Desconectado</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="themeToggle" title="Cambiar tema" class="icon-btn">
+            <i id="themeIcon" class="bi bi-moon-fill"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="search">
+        <input id="searchUsers" placeholder="Buscar o iniciar chat" />
+        <i class="bi bi-search"></i>
+      </div>
+
+      <div id="usersList" class="users-list">
+        <!-- Users dynamically populated -->
+      </div>
+    </aside>
+
+    <!-- RIGHT PANEL: chat -->
+    <main class="right-panel">
+      <header class="chat-header">
+        <div class="chat-info">
+          <div class="chat-avatar"></div>
+          <div>
+            <div id="chatTitle">Chat General</div>
+            <div id="chatStatus" class="muted small">última vez conectado — ahora</div>
+          </div>
+        </div>
+      </header>
+
+      <section id="messages" class="messages">
+        <!-- mensaje template insertado aquí -->
+      </section>
+
+      <footer class="chat-footer">
+        <div class="input-wrap">
+          <input id="messageInput" placeholder="Escribe un mensaje" maxlength="500" autocomplete="off" />
+          <button id="sendBtn" class="btn send" disabled title="Enviar"><i class="bi bi-send-fill"></i></button>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
