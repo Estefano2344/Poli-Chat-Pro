@@ -47,5 +47,22 @@ Desktop.ini
 # === Frontend local ===
 public/uploads/
 
-# Archivos de credenciales de Firebase Admin (¡MUY SENSIBLE!)
+# === Firebase Hosting local cache ===
+.firebase/
+
+# === Secret / credenciales locales ===
+backend/keys/
 backend/serviceAccountKey.json
+*.service-account.json
+*.serviceAccount.json
+*service-account*.json
+firebase-config.js
+*.pem
+*.p12
+*.key
+*.crt
+*.cer
+*.der
+
+# Mantener solo el sample del config público
+!frontend/public/firebase-config.sample.js
