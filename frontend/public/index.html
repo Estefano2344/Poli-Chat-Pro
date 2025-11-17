@@ -9,6 +9,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <!-- Favicon / App Icon (SVG placeholders en /assets) -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Firebase SDK (Compat for simple usage) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <!-- Proyecto config (crear firebase-config.js desde el sample) -->
+  <script src="firebase-config.js" defer></script>
 </head>
 <body>
   <!-- LOGIN (se muestra inicialmente) -->
@@ -16,14 +24,15 @@
     <div class="login-card">
       <div class="login-header">
         <h1>Poli Chat Pro</h1>
-        <p class="muted">Ingresa tu nombre para conectarte</p>
+        <p class="muted">Inicia sesión o entra como invitado</p>
       </div>
       <div class="login-body">
         <div class="input-group">
           <span class="input-icon"><i class="bi bi-person-fill"></i></span>
           <input id="usernameInput" type="text" maxlength="20" placeholder="Tu nombre de usuario" />
         </div>
-        <button id="joinBtn" class="btn primary">Unirse</button>
+        <button id="googleBtn" class="btn primary" style="background:#4285F4">Iniciar con Google</button>
+        <button id="guestBtn" class="btn" style="background:#e9ecef">Entrar como invitado</button>
       </div>
       <div class="login-footer muted">Tus mensajes están cifrados de extremo a extremo</div>
     </div>
@@ -35,7 +44,7 @@
     <aside class="left-panel">
       <header class="left-header">
         <div class="title">
-          <img src="" alt="" class="logo" aria-hidden="true" />
+          <img src="/assets/logo.svg" alt="Poli Chat Pro" class="logo" aria-hidden="true" />
           <div>
             <div class="app-name">Poli Chat Pro</div>
             <div id="myStatus" class="muted small">Desconectado</div>
